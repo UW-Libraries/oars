@@ -136,30 +136,32 @@ Hyrax.config do |config|
   #   * iiif_image_size_default
   #
   # Default is false
-  # config.iiif_image_server = false
+  config.iiif_image_server = true
 
-  # Returns a URL that resolves to an image provided by a IIIF image server
+  # If we have an external IIIF server, use it for image requests; else, use riiif
   config.iiif_image_url_builder = lambda do |file_id, base_url, size|
-    Riiif::Engine.routes.url_helpers.image_url(file_id, host: base_url, size: size)
+    if ENV['IIIF_SERVER_URL'].present?
+      ENV['IIIF_SERVER_URL'] + file_id.gsub('/', '%2F') + "/full/" + size + "/0/default.jpg"
+    else
+      Riiif::Engine.routes.url_helpers.image_url(file_id, host: base_url, size: size)
+    end
   end
-  # config.iiif_image_url_builder = lambda do |file_id, base_url, size|
-  #   "#{base_url}/downloads/#{file_id.split('/').first}"
-  # end
 
-  # Returns a URL that resolves to an info.json file provided by a IIIF image server
+  # If we have an external IIIF server, use it for info.json; else, use riiif
   config.iiif_info_url_builder = lambda do |file_id, base_url|
-    uri = Riiif::Engine.routes.url_helpers.info_url(file_id, host: base_url)
-    uri.sub(%r{/info\.json\Z}, '')
+    if ENV['IIIF_SERVER_URL'].present?
+      ENV['IIIF_SERVER_URL'] + file_id.gsub('/', '%2F')
+    else
+      uri = Riiif::Engine.routes.url_helpers.info_url(file_id, host: base_url)
+      uri.sub(%r{/info\.json\Z}, '')
+    end
   end
-  # config.iiif_info_url_builder = lambda do |_, _|
-  #   ""
-  # end
 
   # Returns a URL that indicates your IIIF image server compliance level
   # config.iiif_image_compliance_level_uri = 'http://iiif.io/api/image/2/level2.json'
 
   # Returns a IIIF image size default
-  # config.iiif_image_size_default = '600,'
+  config.iiif_image_size_default = '600,'
 
   # Fields to display in the IIIF metadata section; default is the required fields
   # config.iiif_metadata_fields = Hyrax::Forms::WorkForm.required_fields
@@ -178,12 +180,12 @@ Hyrax.config do |config|
 
   # Temporary paths to hold uploads before they are ingested into FCrepo
   # These must be lambdas that return a Pathname. Can be configured separately
-  #  config.upload_path = ->() { Rails.root + 'tmp' + 'uploads' }
-  #  config.cache_path = ->() { Rails.root + 'tmp' + 'uploads' + 'cache' }
+  config.upload_path = ->() { Pathname.new(ENV['UPLOAD_PATH'] || '/opt/uploads') }
+  config.cache_path = ->() { Pathname.new(ENV['CACHE_PATH'] || '/opt/uploads/cache') }
 
   # Location on local file system where derivatives will be stored
   # If you use a multi-server architecture, this MUST be a shared volume
-  # config.derivatives_path = Rails.root.join('tmp', 'derivatives')
+  config.derivatives_path = ENV['DERIVATIVES_PATH'] || '/opt/derivatives'
 
   # Should schema.org microdata be displayed?
   # config.display_microdata = true
@@ -195,7 +197,7 @@ Hyrax.config do |config|
   # Location on local file system where uploaded files will be staged
   # prior to being ingested into the repository or having derivatives generated.
   # If you use a multi-server architecture, this MUST be a shared volume.
-  # config.working_path = Rails.root.join( 'tmp', 'uploads')
+  config.working_path = ENV['WORKING_PATH'] || '/opt/uploads'
 
   # Should the media display partial render a download link?
   # config.display_media_download_link = true

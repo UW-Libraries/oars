@@ -141,7 +141,7 @@ Hyrax.config do |config|
   # If we have an external IIIF server, use it for image requests; else, use riiif
   config.iiif_image_url_builder = lambda do |file_id, base_url, size|
     if ENV['IIIF_SERVER_URL'].present?
-      ENV['IIIF_SERVER_URL'] + file_id.gsub('/', '%2F') + "/full/" + size + "/0/default.jpg"
+      ENV['IIIF_SERVER_URL'] + file_id.gsub('/', '%2F') + '/full/' + size + '/0/default.jpg'
     else
       Riiif::Engine.routes.url_helpers.image_url(file_id, host: base_url, size: size)
     end
@@ -180,8 +180,8 @@ Hyrax.config do |config|
 
   # Temporary paths to hold uploads before they are ingested into FCrepo
   # These must be lambdas that return a Pathname. Can be configured separately
-  config.upload_path = ->() { Pathname.new(ENV['UPLOAD_PATH'] || '/opt/uploads') }
-  config.cache_path = ->() { Pathname.new(ENV['CACHE_PATH'] || '/opt/uploads/cache') }
+  config.upload_path = -> { Pathname.new(ENV['UPLOAD_PATH'] || '/opt/uploads') }
+  config.cache_path = -> { Pathname.new(ENV['CACHE_PATH'] || '/opt/uploads/cache') }
 
   # Location on local file system where derivatives will be stored
   # If you use a multi-server architecture, this MUST be a shared volume
@@ -256,7 +256,7 @@ Hyrax.config do |config|
     if defined? BrowseEverything
       config.browse_everything = BrowseEverything.config
     else
-      Rails.logger.warn "BrowseEverything is not installed"
+      Rails.logger.warn 'BrowseEverything is not installed'
     end
   rescue Errno::ENOENT
     config.browse_everything = nil
@@ -279,7 +279,7 @@ Hyrax.config do |config|
   # config.whitelisted_ingest_dirs = []
 end
 
-Date::DATE_FORMATS[:standard] = "%m/%d/%Y"
+Date::DATE_FORMATS[:standard] = '%m/%d/%Y'
 
 Qa::Authorities::Local.register_subauthority('subjects', 'Qa::Authorities::Local::TableBasedAuthority')
 Qa::Authorities::Local.register_subauthority('languages', 'Qa::Authorities::Local::TableBasedAuthority')

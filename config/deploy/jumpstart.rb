@@ -1,1 +1,1 @@
-server 'uwjumpstart.curationexperts.com', user: 'deploy', roles: [:web, :app, :db]
+server 'uwjumpstart.curationexperts.com', user: 'deploy', roles: %i[web app db]

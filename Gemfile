@@ -77,6 +77,7 @@ gem 'twitter-typeahead-rails', '0.11.1.pre.corejavascript'
 group :development, :test do
   gem 'fcrepo_wrapper'
   gem 'rspec-rails'
+  gem 'rspec_junit_formatter'
 end
 
 gem 'riiif', '~> 2.0'

@@ -1,6 +1,7 @@
 # frozen_string_literal: true
+
 namespace :derivatives do
-  desc "Regenerate derivatives for all works"
+  desc 'Regenerate derivatives for all works'
   task regenerate_all: :environment do
     Hyrax.config.curation_concerns.each do |work_type|
       total = 0
@@ -17,7 +18,7 @@ namespace :derivatives do
   desc "Regenerate derivatives for a single work, e.g. rake derivatives:regenerate['c821gj76b']"
   task :regenerate, [:id] => :environment do |_task, args|
     id = args[:id]
-    abort "ERROR: no work id specified, aborting" unless id
+    abort 'ERROR: no work id specified, aborting' unless id
     abort "ERROR: cannot find work with id #{id}, aborting" unless ActiveFedora::Base.exists?(id)
 
     work = ActiveFedora::Base.find(id)

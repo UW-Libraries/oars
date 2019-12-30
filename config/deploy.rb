@@ -1,9 +1,9 @@
 # config valid for current version and patch releases of Capistrano
 lock '~> 3.11.2'
 
-set :application, 'uwjumpstart'
-set :repo_url, 'https://github.com/curationexperts/uwjumpstart.git'
-set :deploy_to, '/opt/uwjumpstart'
+set :application, 'oars'
+set :repo_url, 'https://github.com/UW-Libraries/oars.git'
+set :deploy_to, '/opt/oars'
 set :rails_env, 'production'
 
 set :log_level, :info

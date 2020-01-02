@@ -5,6 +5,9 @@ set :application, 'oars'
 set :repo_url, 'https://github.com/UW-Libraries/oars.git'
 set :deploy_to, '/opt/oars'
 set :rails_env, 'production'
+set :init_system, :systemd
+set :service_unit_name, 'sidekiq.service'
+set :sidekiq_user, 'deploy'
 
 set :log_level, :info
 set :bundle_flags, '--deployment'

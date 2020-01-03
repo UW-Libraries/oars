@@ -22,4 +22,6 @@ test:
 production:
   admin:
     - bess@curationexperts.com
+    - max@curationexperts.com
+    - mark@curationexperts.com
   # Add roles for users here.

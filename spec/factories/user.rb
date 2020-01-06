@@ -1,9 +1,10 @@
 # frozen_string_literal: true
+
 FactoryBot.define do
   factory :user do
     display_name { FFaker::Name.name }
     email { FFaker::Internet.email }
-    password { "123456" }
+    password { '123456' }
 
     transient do
       # Allow for custom groups when a user is instantiated.

@@ -1,7 +1,6 @@
-# coding: utf-8
 # frozen_string_literal: true
+
 require 'rails_helper'
-include Warden::Test::Helpers
 
 RSpec.describe 'Dashboard', type: :system do
   context 'as a regular user' do

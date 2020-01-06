@@ -44,14 +44,6 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 
-group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: %i[mri mingw x64_mingw]
-  # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '~> 2.13'
-  gem 'selenium-webdriver'
-end
-
 group :development do
   # Use Capistrano for deployment
   gem 'capistrano'
@@ -70,8 +62,17 @@ end
 
 group :development, :test do
   gem 'bixby'
+  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  # Adds support for Capybara system testing and selenium driver
+  gem 'capybara', '~> 2.13'
+  gem 'factory_bot_rails'
   gem 'fcrepo_wrapper'
+  gem 'ffaker'
   gem 'rspec-rails'
   gem 'rspec_junit_formatter'
+  gem 'rubocop-rspec'
+  gem 'selenium-webdriver'
   gem 'solr_wrapper', '>= 0.3'
+  gem 'webdrivers', '~> 3.0'
 end

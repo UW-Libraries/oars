@@ -17,5 +17,6 @@ class Ability
     # if user_groups.include? 'special_group'
     #   can [:create], ActiveFedora::Base
     # end
+    can %i[create show add_user remove_user index edit update destroy], Role if current_user.admin?
   end
 end

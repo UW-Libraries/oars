@@ -11,4 +11,5 @@ class ApplicationController < ActionController::Base
   with_themed_layout '1_column'
 
   protect_from_forgery with: :exception
+  helper Zizia::Engine.helpers
 end

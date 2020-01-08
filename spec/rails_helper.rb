@@ -10,6 +10,7 @@ require 'rspec/rails'
 # Add additional requires below this line. Rails is not loaded until this point!
 
 require 'ffaker'
+require 'active_fedora/cleaner'
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
@@ -35,6 +36,24 @@ rescue ActiveRecord::PendingMigrationError => e
   exit 1
 end
 RSpec.configure do |config|
+  config.before(:suite) do
+    ActiveJob::Base.queue_adapter = :test
+    ActiveFedora::Cleaner.clean!
+  end
+
+  config.before(clean: true) do
+    ActiveFedora::Cleaner.clean!
+  end
+
+  config.before perform_jobs: true do
+    ActiveJob::Base.queue_adapter.perform_enqueued_jobs = true
+  end
+
+  config.after perform_jobs: true do
+    ActiveJob::Base.queue_adapter.filter                = nil
+    ActiveJob::Base.queue_adapter.perform_enqueued_jobs = false
+  end
+
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
 

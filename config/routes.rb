@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   mount BrowseEverything::Engine => '/browse'
 
   mount Blacklight::Engine => '/'
+  mount Zizia::Engine => '/'
 
   concern :searchable, Blacklight::Routes::Searchable.new
 

@@ -1,10 +1,10 @@
 # Generated via
-#  `rails generate hyrax:work PlayingCard`
+#  `rails generate hyrax:work Work`
 require 'rails_helper'
 include Warden::Test::Helpers
 
 # NOTE: If you generated more than one work, you have to set "js: true"
-RSpec.feature 'Create a PlayingCard', js: true do
+RSpec.describe 'Create a Work', type: :system, js: true do
   context 'a logged in user' do
     let(:user_attributes) do
       { email: 'test@example.com' }
@@ -36,10 +36,10 @@ RSpec.feature 'Create a PlayingCard', js: true do
       click_link 'Add new work'
 
       # If you generate more than one work uncomment these lines
-      choose 'payload_concern', option: 'PlayingCard'
+      choose 'payload_concern', option: 'Work'
       click_button 'Create work'
 
-      expect(page).to have_content 'Add New Playing Card'
+      expect(page).to have_content 'Add New Work'
       click_link 'Files' # switch tab
       expect(page).to have_content 'Add files'
       expect(page).to have_content 'Add folder'
@@ -57,7 +57,7 @@ RSpec.feature 'Create a PlayingCard', js: true do
       # select box. Click outside the box so the next line can't find
       # its element
       find('body').click
-      choose('playing_card_visibility_open')
+      choose('work_visibility_open')
       expect(page).to have_content('Please note, making something visible to the world (i.e. marking this as Public) may be viewed as publishing which could impact your ability to')
       check('agreement')
 

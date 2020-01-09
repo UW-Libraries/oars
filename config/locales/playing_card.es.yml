@@ -1,0 +1,10 @@
+es:
+  hyrax:
+    icons:
+      playing_card:     'fa fa-file-text-o'
+    select_type:
+      playing_card:
+        # TODO: translate `human_name` into Spanish
+        description:        "Playing card trabajos"
+        name:               "Playing Card"
+        # TODO: translate `human_name` into Spanish

@@ -17,6 +17,9 @@ RSpec.describe 'Create a PlayingCard', type: :system, js: true do
     let(:workflow) { Sipity::Workflow.create!(active: true, name: 'test-workflow', permission_template: permission_template) }
 
     before do
+      @upload_path = ENV['UPLOAD_PATH']
+      ENV['UPLOAD_PATH'] = Rails.root.join('tmp')
+
       # Create a single action that can be taken
       Sipity::WorkflowAction.create!(name: 'submit', workflow: workflow)
 
@@ -28,6 +31,10 @@ RSpec.describe 'Create a PlayingCard', type: :system, js: true do
         access: 'deposit'
       )
       login_as user
+    end
+
+    after do
+      ENV['UPLOAD_PATH'] = @upload_path
     end
 
     scenario do

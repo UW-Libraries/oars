@@ -1,0 +1,8 @@
+pt-BR:
+  hyrax:
+    icons:
+      playing_card:     'fa fa-file-text-o'
+    select_type:
+      playing_card:
+        description:        "Playing card trabalhos"
+        name:               "Playing Card"

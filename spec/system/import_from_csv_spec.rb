@@ -17,7 +17,7 @@ RSpec.describe 'Importing records from a CSV file', :perform_jobs, :clean, type:
       login_as admin_user
     end
 
-    it 'starts the import' do
+    xit 'starts the import' do
       visit '/csv_imports/new'
       expect(page).to have_content 'Testing Collection'
       expect(page).not_to have_content '["Testing Collection"]'

@@ -26,3 +26,6 @@
 .env.development
 .env.test
 .env.production
+
+#Ignore Mac kruft
+.DS_Store

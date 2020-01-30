@@ -5,3 +5,7 @@ Style/MixinUsage:
 
 Metrics/BlockLength:
   Enabled: false
+
+AllCops:
+  Excludes:
+    - db/schema.rb

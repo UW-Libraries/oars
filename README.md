@@ -16,5 +16,8 @@
   1. Launch a rails server: `bundle exec rails server`
   1. Create the default admin set: `bundle exec rake hyrax:default_admin_set:create`
   1. Create the default collection types: `bundle exec rake hyrax:default_collection_types:create`
+  1. Load workflows: `bundle exec rake hyrax:workflow:load`
   1. Run the tests to ensure everything is working as expected: `rspec spec`
   1. You should now be able to go to `http://localhost:3000` and see the application
+  1. Create user
+  1. [Make Admin](https://github.com/samvera/hyrax/wiki/Making-Admin-Users-in-Hyrax)

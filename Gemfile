@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.5.3'
+ruby '2.6.3'
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?('/')
@@ -74,6 +74,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'rspec_junit_formatter'
   gem 'rubocop-rspec'
+  gem 'rubocop-rails'
   gem 'selenium-webdriver'
   gem 'solr_wrapper', '>= 0.3'
   gem 'webdrivers', '~> 3.0'

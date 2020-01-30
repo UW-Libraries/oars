@@ -6,6 +6,9 @@ Style/MixinUsage:
 Metrics/BlockLength:
   Enabled: false
 
+Naming/FileName:
+  Enabled: false
+
 AllCops:
   Exclude:
     - db/schema.rb

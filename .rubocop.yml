@@ -9,3 +9,4 @@ Metrics/BlockLength:
 AllCops:
   Exclude:
     - db/schema.rb
+    - vendor/**

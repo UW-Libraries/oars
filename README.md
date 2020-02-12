@@ -1,14 +1,5 @@
 # Oars
-
-<table width="100%">
-<tr><td>
-</td><td>
-A repository application for UW
-<br/><br/>
 [![CircleCI](https://circleci.com/gh/UW-Libraries/oars/tree/master.svg?style=svg)](https://circleci.com/gh/UW-Libraries/oars/tree/master)
-</td></tr>
-</table>
-
 
 * Ruby 2.6.3
 * Hyrax 2.6.0

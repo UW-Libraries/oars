@@ -6,7 +6,7 @@
 A repository application for UW
 <br/><br/>
 
-[![CircleCI](https://circleci.com/gh/emory-libraries/dlp-curate.svg?style=svg)](https://circleci.com/gh//UW-Libraries/oars)
+[![CircleCI](https://circleci.com/gh/UW-Libraries/oars.svg?style=svg)](https://circleci.com/gh/UW-Libraries/oars)
 </td></tr>
 </table>
 

@@ -24,7 +24,6 @@
 
 # Ignore all environment variables
 .env.development
-.env.test
 .env.production
 
 #Ignore Mac kruft

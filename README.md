@@ -5,8 +5,7 @@
 </td><td>
 A repository application for UW
 <br/><br/>
-
-[![CircleCI](https://circleci.com/gh/emory-libraries/dlp-curate.svg?style=svg)](https://circleci.com/gh//UW-Libraries/oars)
+[![CircleCI](https://circleci.com/gh/UW-Libraries/oars/tree/master.svg?style=svg)](https://circleci.com/gh/UW-Libraries/oars/tree/master)
 </td></tr>
 </table>
 

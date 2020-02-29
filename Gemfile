@@ -23,7 +23,7 @@ gem 'sidekiq'
 # Make postgres available for database
 gem 'pg'
 # Use Puma as the app server
-gem 'puma', '~> 3.7'
+gem 'puma', '~> 3.12'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.6'
 # Use Redis adapter to run Action Cable in production

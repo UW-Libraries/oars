@@ -60,7 +60,7 @@ RSpec.feature 'Create a Publication', js: true do
       # Field testing below the fold
       click_link("Additional fields")
       fill_in('Sponsor', with: 'Sponsoring Org')
-      fill_in('Datepublishedelsewhere', with: '1776')
+      fill_in('Date Published Elsewhere', with: '1776')
       fill_in "Doi", with: "DummyDOI"
       fill_in('Citation', with: 'testing')
       fill_in('Rights', with: 'testing')

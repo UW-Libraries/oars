@@ -6,5 +6,8 @@ module Hyrax
     self.model_class = ::Publication
     self.terms += [:resource_type]
     self.terms += [:doi]
+    self.terms -= [:rights_statement]
+    self.terms -= [:date_created]
+    self.terms -= [:source]
   end
 end

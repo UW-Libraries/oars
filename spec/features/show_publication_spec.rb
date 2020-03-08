@@ -7,6 +7,10 @@ RSpec.feature 'Display an Publication' do
   let(:visibility) { Hydra::AccessControls::AccessRight::VISIBILITY_TEXT_VALUE_PUBLIC }
   let(:user)       { 'test@example.com' }
   let(:doi)        { ['DummyDOI'] }
+  let(:sponsor)        { ['DummySponsor'] }
+  let(:datepublishedelsewhere)        { ['DummyDate'] }
+  let(:citation)        { ['DummyCitation'] }
+  let(:rights)        { ['DummyRights'] }
 
   let :publication do
     Publication.create(title:      title,
@@ -14,7 +18,11 @@ RSpec.feature 'Display an Publication' do
                 keyword:    keyword,
                 visibility: visibility,
                 depositor:  user,
-                doi: doi)
+                doi:        doi,
+                sponsor:    sponsor,
+                datepublishedelsewhere: datepublishedelsewhere,
+                citation:   citation,
+                rights:     rights)
   end
 
   scenario "Show a public Publication" do
@@ -25,5 +33,9 @@ RSpec.feature 'Display an Publication' do
     expect(page).to have_content publication.keyword.first
     expect(page).to have_content publication.keyword.last
     expect(page).to have_content publication.doi.first
+    expect(page).to have_content publication.sponsor.first
+    expect(page).to have_content publication.datepublishedelsewhere.first
+    expect(page).to have_content publication.citation.first
+    expect(page).to have_content publication.rights.first
   end
 end

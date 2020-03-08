@@ -51,12 +51,13 @@ RSpec.feature 'Create a Publication', js: true do
       fill_in('Title', with: 'My Test Work')
       fill_in('Creator', with: 'Doe, Jane')
       fill_in('Keyword', with: 'testing')
-      select('In Copyright', from: 'Rights statement')
+      ## Removed since rights_statement was removed from form
+      # select('In Copyright', from: 'Rights statement')
 
       # DOI field testing
       click_link("Additional fields")
       fill_in "Doi", with: "DummyDOI"
-      
+
       # With selenium and the chrome driver, focus remains on the
       # select box. Click outside the box so the next line can't find
       # its element

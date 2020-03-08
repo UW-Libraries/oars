@@ -6,3 +6,8 @@ en:
       publication:
         description:        "Publication works"
         name:               "Publication"
+  simple_form:
+    labels:
+      defaults:
+        datepublishedelsewhere: "Date Published Elsewhere"
+        doi:                "DOI"

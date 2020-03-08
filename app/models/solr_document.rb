@@ -29,4 +29,16 @@ class SolrDocument
   def doi
     self[Solrizer.solr_name('doi')]
   end
+  def datepublishedelsewhere
+    self[Solrizer.solr_name('datepublishedelsewhere')]
+  end
+  def sponsor
+    self[Solrizer.solr_name('sponsor')]
+  end
+  def citation
+    self[Solrizer.solr_name('citation')]
+  end
+  def rights
+    self[Solrizer.solr_name('rights')]
+  end
 end

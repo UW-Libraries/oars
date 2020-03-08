@@ -11,5 +11,9 @@ RSpec.describe Hyrax::PublicationForm do
   it "has the expected terms" do
     expect(form.terms).to include(:title)
     expect(form.terms).to include(:doi)
+    expect(form.terms).to include(:sponsor)
+    expect(form.terms).to include(:datepublishedelsewhere)
+    expect(form.terms).to include(:citation)
+    expect(form.terms).to include(:rights)
   end
 end

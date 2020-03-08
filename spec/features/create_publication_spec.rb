@@ -51,12 +51,20 @@ RSpec.feature 'Create a Publication', js: true do
       fill_in('Title', with: 'My Test Work')
       fill_in('Creator', with: 'Doe, Jane')
       fill_in('Keyword', with: 'testing')
+
+
+
       ## Removed since rights_statement was removed from form
       # select('In Copyright', from: 'Rights statement')
 
-      # DOI field testing
+      # Field testing below the fold
       click_link("Additional fields")
+      fill_in('Sponsor', with: 'Sponsoring Org')
+      fill_in('Datepublishedelsewhere', with: '1776')
       fill_in "Doi", with: "DummyDOI"
+      fill_in('Citation', with: 'testing')
+      fill_in('Rights', with: 'testing')
+
 
       # With selenium and the chrome driver, focus remains on the
       # select box. Click outside the box so the next line can't find

@@ -11,6 +11,10 @@ class Publication < ActiveFedora::Base
   property :doi, predicate: "http://id.loc.gov/vocabulary/identifiers/doi" do |index|
     index.as :stored_searchable
   end
+  property :sponsor, predicate: "mrel:spn"
+  property :datepublishedelsewhere, predicate: "dct:issued"
+  property :citation, predicate: "dct:bibliographicCitation"
+  property :rights, predicate: "dce:rights"
 
   # This must be included at the end, because it finalizes the metadata
   # schema (by adding accepts_nested_attributes)

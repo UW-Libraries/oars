@@ -15,7 +15,7 @@ gem 'devise-guests', '~> 0.6'
 # Use dotenv for environment variable management
 gem 'dotenv-rails'
 gem 'hydra-role-management', '~> 1.0', '>= 1.0.2'
-gem 'hyrax', '2.6.0'
+gem 'hyrax', '2.7.2'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
@@ -66,7 +66,7 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '~> 2.13'
+  gem 'capybara', '~> 3.29'
   gem 'factory_bot_rails'
   gem 'fcrepo_wrapper'
   gem 'ffaker'

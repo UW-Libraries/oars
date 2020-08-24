@@ -15,7 +15,7 @@ gem 'devise-guests', '~> 0.6'
 # Use dotenv for environment variable management
 gem 'dotenv-rails'
 gem 'hydra-role-management', '~> 1.0', '>= 1.0.2'
-gem 'hyrax', '2.7.2'
+gem 'hyrax', '2.9.0'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'

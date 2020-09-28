@@ -41,4 +41,7 @@ class SolrDocument
   def rights
     self[Solrizer.solr_name('rights')]
   end
+  def rights
+    self[Solrizer.solr_name('department_or_school')]
+  end
 end

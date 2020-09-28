@@ -5,6 +5,7 @@ module Hyrax
   class PublicationForm < Hyrax::Forms::WorkForm
     self.model_class = ::Publication
     self.terms += [:department_or_school]
+    self.terms += [:campus]
     self.terms += [:resource_type]
     self.terms += [:sponsor]
     self.terms += [:datepublishedelsewhere]
@@ -14,6 +15,6 @@ module Hyrax
     self.terms -= [:rights_statement]
     self.terms -= [:date_created]
     self.terms -= [:source]
-    self.required_fields += [:department_or_school]
+    self.required_fields += [:department_or_school, :campus]
   end
 end

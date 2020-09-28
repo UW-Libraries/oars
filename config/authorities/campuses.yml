@@ -1,0 +1,12 @@
+## config/authorities/campuses.yml
+terms:
+  - id: non
+    term: None
+  - id: sea
+    term: Seattle
+  - id: bot
+    term: Bothell
+  - id: tac
+    term: Tacoma
+  - id: oth
+    term: Other

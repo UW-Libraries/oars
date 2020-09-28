@@ -23,9 +23,13 @@ class Publication < ActiveFedora::Base
   property :rights, predicate: "dce:rights" do |index|
     index.as :stored_searchable
   end
-  property :department_or_school, predicate: "mrel:sht" do |index|
-    index.as :stored_searchable
+  property :campus, predicate: "mrel:uvp" do |index|
+    index.as :stored_searchable, :facetable
   end
+  property :department_or_school, predicate: "mrel:sht" do |index|
+    index.as :stored_searchable, :facetable
+  end
+
   # This must be included at the end, because it finalizes the metadata
   # schema (by adding accepts_nested_attributes)
   include ::Hyrax::BasicMetadata

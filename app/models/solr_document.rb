@@ -41,7 +41,10 @@ class SolrDocument
   def rights
     self[Solrizer.solr_name('rights')]
   end
-  def rights
+  def department_or_school
     self[Solrizer.solr_name('department_or_school')]
+  end
+  def campus
+    self[Solrizer.solr_name('campus')]
   end
 end

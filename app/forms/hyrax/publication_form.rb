@@ -14,5 +14,6 @@ module Hyrax
     self.terms -= [:rights_statement]
     self.terms -= [:date_created]
     self.terms -= [:source]
+    self.required_fields += [:department_or_school]
   end
 end

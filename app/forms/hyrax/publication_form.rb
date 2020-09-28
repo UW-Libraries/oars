@@ -4,6 +4,7 @@ module Hyrax
   # Generated form for Publication
   class PublicationForm < Hyrax::Forms::WorkForm
     self.model_class = ::Publication
+    self.terms += [:department_or_school:]
     self.terms += [:resource_type]
     self.terms += [:sponsor]
     self.terms += [:datepublishedelsewhere]

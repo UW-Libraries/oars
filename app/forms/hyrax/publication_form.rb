@@ -17,5 +17,6 @@ module Hyrax
     self.terms -= [:source]
     self.required_fields += [:department_or_school]
     self.required_fields += [:campus]
+    self.required_fields += [:license]
   end
 end
